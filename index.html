@@ -2,17 +2,25 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Smart Bayt</title>
   <meta name="description" content="Smart Bayt is a bilingual family budget planner for tracking income, expenses, and savings.">
   <meta name="format-detection" content="telephone=no">
   <meta name="application-name" content="Smart Bayt">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Smart Bayt">
-  <meta name="theme-color" content="#f8f5ef">
-  <link rel="icon" type="image/png" href="./assets/logo.png">
-  <link rel="apple-touch-icon" href="./assets/logo.png">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon-180.png">
+  <link rel="apple-touch-startup-image" href="./assets/icons/apple-splash-1179x2556.png" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3)">
+  <link rel="apple-touch-startup-image" href="./assets/icons/apple-splash-1170x2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)">
+  <link rel="apple-touch-startup-image" href="./assets/icons/apple-splash-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)">
+  <link rel="apple-touch-startup-image" href="./assets/icons/apple-splash-1242x2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)">
+  <link rel="apple-touch-startup-image" href="./assets/icons/apple-splash-1284x2778.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3)">
+  <link rel="apple-touch-startup-image" href="./assets/icons/apple-splash-1290x2796.png" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,20 +28,23 @@
   <main class="app">
     <section class="card app-shell">
       <header class="header app-header">
-        <div class="logo-wrap">
-          <img
-            src="./assets/logo.png"
-            alt="Smart Bayt logo"
-            class="app-logo"
-            loading="eager"
-          >
-        </div>
-
         <div class="header-top">
           <div class="brand-block">
+            <div class="logo-wrap">
+              <div class="logo-frame">
+                <img
+                  src="./assets/logo.png"
+                  alt="Smart Bayt logo"
+                  class="app-logo"
+                  loading="eager"
+                >
+                <span class="zs-mark" aria-hidden="true">ZS</span>
+              </div>
+            </div>
             <div>
               <p class="eyebrow app-badge" data-i18n="eyebrow">Smart Bayt</p>
               <h1 class="brand-title" data-i18n="brandTitle">Smart Bayt – Home Finance Made Simple</h1>
+              <p class="brand-support" data-i18n="brandSupport">Family Budget Planner</p>
             </div>
           </div>
           <button id="language-toggle" class="language-toggle" type="button">العربية</button>

@@ -241,6 +241,7 @@ const translations = {
   en: {
     eyebrow: "Smart Bayt",
     brandTitle: "Smart Bayt – Home Finance Made Simple",
+    brandSupport: "Family Budget Planner",
     subtitle: "Plan a detailed family budget for a household of five with two cars, all in one simple view.",
     incomeSection: "Income",
     incomeSectionSubtitle: "Add every monthly income source for the family.",
@@ -273,6 +274,7 @@ const translations = {
   ar: {
     eyebrow: "سمارت بيت",
     brandTitle: "سمارت بيت – إدارة مالية منزلية بسيطة",
+    brandSupport: "مخطط ميزانية الأسرة",
     subtitle: "نظّم ميزانية الأسرة بشكل واضح ومفصل لعائلة من خمسة أفراد مع سيارتين.",
     incomeSection: "الدخل",
     incomeSectionSubtitle: "أدخل جميع مصادر الدخل الشهرية للأسرة.",
