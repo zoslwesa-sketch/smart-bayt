@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Bayt</title>
+  <meta name="description" content="Smart Bayt is a bilingual family budget planner for tracking income, expenses, and savings.">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="application-name" content="Smart Bayt">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Smart Bayt">
+  <meta name="theme-color" content="#f8f5ef">
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <link rel="apple-touch-icon" href="./assets/logo.png">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="card app-shell">
+      <header class="header app-header">
+        <div class="logo-wrap">
+          <img
+            src="./assets/logo.png"
+            alt="Smart Bayt logo"
+            class="app-logo"
+            loading="eager"
+          >
+        </div>
+
+        <div class="header-top">
+          <div class="brand-block">
+            <div>
+              <p class="eyebrow app-badge" data-i18n="eyebrow">Smart Bayt</p>
+              <h1 class="brand-title" data-i18n="brandTitle">Smart Bayt – Home Finance Made Simple</h1>
+            </div>
+          </div>
+          <button id="language-toggle" class="language-toggle" type="button">العربية</button>
+        </div>
+
+        <p class="subtitle" data-i18n="subtitle">
+          Plan a detailed family budget for a household of five with two cars, all in one simple view.
+        </p>
+      </header>
+
+      <form id="finance-form" class="finance-form">
+        <div class="planner-toolbar">
+          <button id="expand-all" class="toolbar-button" type="button" data-i18n="expandAll">Expand all</button>
+          <button id="collapse-all" class="toolbar-button" type="button" data-i18n="collapseAll">Collapse all</button>
+        </div>
+
+        <section class="planner-shell">
+          <section class="planner-column">
+            <details class="section-card" open data-section-card>
+              <summary class="section-summary">
+                <div>
+                  <h2 data-i18n="incomeSection">Income</h2>
+                  <p data-i18n="incomeSectionSubtitle">Add every monthly income source for the family.</p>
+                </div>
+                <span class="section-toggle-text" data-i18n="collapseSection">Collapse</span>
+              </summary>
+
+              <div id="income-fields" class="field-grid"></div>
+
+              <div class="summary-row">
+                <span data-i18n="totalIncome">Total income</span>
+                <strong id="total-income">$0.00</strong>
+              </div>
+            </details>
+
+            <div id="expense-sections" class="expense-sections"></div>
+          </section>
+
+          <aside class="planner-column results-column">
+            <section class="results" aria-live="polite">
+              <div class="result-row">
+                <span data-i18n="totalIncome">Total income</span>
+                <strong id="result-total-income">$0.00</strong>
+              </div>
+              <div class="result-row">
+                <span data-i18n="totalExpenses">Total expenses</span>
+                <strong id="result-total-expenses">$0.00</strong>
+              </div>
+              <div class="result-row">
+                <span data-i18n="remainingBalance">Remaining balance</span>
+                <strong id="result-remaining-balance">$0.00</strong>
+              </div>
+              <div class="result-row">
+                <span data-i18n="status">Status</span>
+                <strong id="status-text" class="status-text">Comfortable</strong>
+              </div>
+
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <p class="metric-label" data-i18n="housingRatio">Housing ratio</p>
+                  <p id="housing-ratio" class="metric-value">0%</p>
+                </div>
+                <div class="metric-card">
+                  <p class="metric-label" data-i18n="carCostsTotal">Car costs total</p>
+                  <p id="car-costs-total" class="metric-value">$0.00</p>
+                </div>
+                <div class="metric-card">
+                  <p class="metric-label" data-i18n="foodTotal">Food total</p>
+                  <p id="food-total" class="metric-value">$0.00</p>
+                </div>
+                <div class="metric-card">
+                  <p class="metric-label" data-i18n="childrenTotal">Children total</p>
+                  <p id="children-total" class="metric-value">$0.00</p>
+                </div>
+                <div class="metric-card">
+                  <p class="metric-label" data-i18n="vacationTotal">Vacation total</p>
+                  <p id="vacation-total" class="metric-value">$0.00</p>
+                </div>
+              </div>
+
+              <div class="balance-card">
+                <p class="balance-label" data-i18n="remainingBalance">Remaining balance</p>
+                <p id="remaining-balance" class="balance-value">$0.00</p>
+              </div>
+
+              <p id="warning-message" class="warning hidden"></p>
+
+              <section class="chart-section">
+                <div class="chart-header">
+                  <h2 class="chart-title" data-i18n="expenseChart">Expense summary</h2>
+                  <p class="chart-subtitle" data-i18n="chartSubtitle">Compare the biggest budget groups at a glance.</p>
+                </div>
+
+                <div class="chart-bars" aria-label="Expense chart">
+                  <div class="chart-row">
+                    <div class="chart-labels">
+                      <span data-i18n="housingChart">Housing</span>
+                      <strong id="chart-housing-value">$0.00</strong>
+                    </div>
+                    <div class="chart-track">
+                      <div id="chart-housing-bar" class="chart-bar housing-bar"></div>
+                    </div>
+                  </div>
+
+                  <div class="chart-row">
+                    <div class="chart-labels">
+                      <span data-i18n="foodChart">Food</span>
+                      <strong id="chart-food-value">$0.00</strong>
+                    </div>
+                    <div class="chart-track">
+                      <div id="chart-food-bar" class="chart-bar food-bar"></div>
+                    </div>
+                  </div>
+
+                  <div class="chart-row">
+                    <div class="chart-labels">
+                      <span data-i18n="carsChart">Cars</span>
+                      <strong id="chart-cars-value">$0.00</strong>
+                    </div>
+                    <div class="chart-track">
+                      <div id="chart-cars-bar" class="chart-bar cars-bar"></div>
+                    </div>
+                  </div>
+
+                  <div class="chart-row">
+                    <div class="chart-labels">
+                      <span data-i18n="childrenChart">Children</span>
+                      <strong id="chart-children-value">$0.00</strong>
+                    </div>
+                    <div class="chart-track">
+                      <div id="chart-children-bar" class="chart-bar children-bar"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <div class="form-actions sticky-actions">
+                <button id="clear-data" class="clear-button" type="button" data-i18n="clearData">Clear Data</button>
+              </div>
+            </section>
+          </aside>
+        </section>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
